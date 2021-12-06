@@ -22,11 +22,17 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "prettier": "2.5.0",
     "standard-version": "^9.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
