@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import ReactHtmlParser from 'react-html-parser';
 
-import linkBlocks from '../config/linkBlocks.json';
-import styles from '../styles/Home.module.scss';
+import linkBlocks from '@/config/linkBlocks.json';
+import styles from '@/styles/Home.module.scss';
 
 export default function Home() {
   return (
