@@ -1,11 +1,27 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import ReactHtmlParser from 'react-html-parser';
+import Head from "next/head";
+import Image from "next/image";
+import ReactHtmlParser from "react-html-parser";
 
-import linkBlocks from '@/config/linkBlocks.json';
-import styles from '@/styles/Home.module.scss';
+import linkBlocks from "@/config/linkBlocks.json";
 
-export default function Home() {
+import { DateHelper, dateHelperStyle } from "@/plugins/DateHelper";
+
+import { getLastCommitDate as getGithubLastCommitDate } from "@/services/GithubService";
+
+import styles from "@/styles/Home.module.scss";
+
+function getSubtitle (key, props) {
+  key = key.toLowerCase();
+
+  switch (key) {
+    case "github":
+      return props.stats[key];
+    default:
+      return "";
+  }
+}
+
+function Home (props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -39,6 +55,8 @@ export default function Home() {
             <a
               href="mailto:andrew.savetchuk@gmail.com"
               className={styles.introButton}
+              target="_blank"
+              rel="noreferrer"
             >
               <span>&#x1F4E8;</span>Get In Touch
             </a>
@@ -53,22 +71,24 @@ export default function Home() {
                 <ul>
                   {linkBlock.links?.length
                     ? linkBlock.links.map((link, linkIndex) => (
-                        <li key={`linkBlock-${linkBlockIndex}-${linkIndex}`}>
-                          <div>
-                            <span>{ReactHtmlParser(link.icon)}</span>
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className={styles.linksItemTitle}
-                            >
-                              {link.title}
-                            </a>
-                            <div className={styles.linksItemSubtitle}></div>
+                      <li key={`linkBlock-${linkBlockIndex}-${linkIndex}`}>
+                        <div>
+                          <span>{ReactHtmlParser(link.icon)}</span>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={styles.linksItemTitle}
+                          >
+                            {link.title}
+                          </a>
+                          <div className={styles.linksItemSubtitle}>
+                            {getSubtitle(link.title, props)}
                           </div>
-                        </li>
-                      ))
-                    : ''}
+                        </div>
+                      </li>
+                    ))
+                    : ""}
                 </ul>
               </div>
             ))}
@@ -78,3 +98,25 @@ export default function Home() {
     </div>
   );
 }
+
+export async function getStaticProps () {
+  const currentHour = String(new Date().getHours()).padStart(2, "0");
+  const currentMinute = String(new Date().getMinutes()).padStart(2, "0");
+  const timeNow = `${currentHour}:${currentMinute}:00`;
+
+  const [
+    githubLastCommitDate
+  ] = await Promise.all([
+    getGithubLastCommitDate("AndrewSavetchuk")
+  ]);
+
+  return {
+    props: {
+      stats: {
+        github: `Last commit: ${DateHelper.format(new Date(`${githubLastCommitDate}T${timeNow}`), dateHelperStyle)}`
+      }
+    }
+  };
+}
+
+export default Home;
