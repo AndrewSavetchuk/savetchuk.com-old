@@ -4,7 +4,7 @@ import ReactHtmlParser from "react-html-parser";
 
 import linkBlocks from "@/config/linkBlocks.json";
 
-import { DateHelper, dateHelperStyle } from "@/plugins/DateHelper";
+import { diffForHumans } from "@/plugins/DateHelper";
 
 import { getLastCommitDate as getGithubLastCommitDate } from "@/services/GithubService";
 
@@ -100,10 +100,6 @@ function Home (props) {
 }
 
 export async function getStaticProps () {
-  const currentHour = String(new Date().getHours()).padStart(2, "0");
-  const currentMinute = String(new Date().getMinutes()).padStart(2, "0");
-  const timeNow = `${currentHour}:${currentMinute}:00`;
-
   const [
     githubLastCommitDate
   ] = await Promise.all([
@@ -113,7 +109,7 @@ export async function getStaticProps () {
   return {
     props: {
       stats: {
-        github: `Last commit: ${DateHelper.format(new Date(`${githubLastCommitDate}T${timeNow}`), dateHelperStyle)}`
+        github: `Last commit: ${diffForHumans(githubLastCommitDate)}`
       }
     }
   };

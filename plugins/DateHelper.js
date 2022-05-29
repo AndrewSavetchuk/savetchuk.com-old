@@ -1,44 +1,24 @@
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import { round } from "javascript-time-ago/steps";
 
 TimeAgo.addDefaultLocale(en);
-TimeAgo.addLabels("en", "custom", {
-  "second": {
-    "past": {
-      "one": "Today",
-      "other": "Today"
-    },
-    "future": {
-      "one": "Today",
-      "other": "Today"
-    }
-  },
-  "minute": {
-    "past": {
-      "one": "Today",
-      "other": "Today"
-    },
-    "future": {
-      "one": "Today",
-      "other": "Today"
-    }
-  },
-  "hour": {
-    "past": {
-      "one": "Today",
-      "other": "Today"
-    },
-    "future": {
-      "one": "Today",
-      "other": "Today"
-    }
-  }
-});
-
-export const dateHelperStyle = {
-  steps: round,
-  labels: 'custom'
-}
 
 export const DateHelper = new TimeAgo("en-US");
+
+export function diffForHumans (date) {
+  const givenDate = new Date(date);
+  const currentDate = new Date();
+
+  const sameDay = givenDate.getDate() === currentDate.getDate();
+  const yesterday = givenDate.getDate() === currentDate.getDate() - 1;
+
+  if (sameDay) {
+    return 'Today';
+  }
+
+  if (yesterday) {
+    return 'Yesterday';
+  }
+
+  return DateHelper.format(new Date(`${date}T23:59:59`));
+}
