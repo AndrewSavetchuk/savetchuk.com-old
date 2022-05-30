@@ -1,23 +1,29 @@
-import Head from "next/head";
-import Image from "next/image";
-import ReactHtmlParser from "react-html-parser";
+import Head from 'next/head';
+import Image from 'next/image';
+import ReactHtmlParser from 'react-html-parser';
 
-import linkBlocks from "@/config/linkBlocks.json";
+import linkBlocks from '@/config/linkBlocks.json';
 
-import { diffForHumans } from "@/plugins/DateHelper";
+import { diffForHumans } from '@/helpers/DateHelper';
 
-import { getLastCommitDate as getGithubLastCommitDate } from "@/services/GithubService";
+import { getLastCommitDate as getGithubLastCommitDate } from '@/services/GithubService';
+import { getLastTweetDate as getTwitterLastTweetDate } from '@/services/TwitterService';
 
-import styles from "@/styles/Home.module.scss";
+import styles from '@/styles/Home.module.scss';
 
 function getSubtitle (key, props) {
   key = key.toLowerCase();
 
   switch (key) {
-    case "github":
+    case 'github':
+    case 'twitter':
       return props.stats[key];
+    case 'linked in':
+      return 'You can find my CV here'
+    case 'instagram':
+      return 'Non-technical stuff';
     default:
-      return "";
+      return '';
   }
 }
 
@@ -27,19 +33,19 @@ function Home (props) {
       <Head>
         <title>Andrew Savetchuk</title>
         <meta
-          name="description"
-          content="Software Engineer with a background in developing web applications and services for global customers, across the Consumer Services, Medical, and Fashion industries."
+          name='description'
+          content='Software Engineer with a background in developing web applications and services for global customers, across the Consumer Services, Medical, and Fashion industries.'
         />
         <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>"
+          rel='icon'
+          href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>'
         />
       </Head>
       <main className={styles.main}>
         <div className={styles.mainColumn}>
           <section className={styles.intro}>
             <Image
-              src="/img/avatar.jpg"
+              src='/img/avatar.jpg'
               className={styles.introAvatar}
               alt="Andrew Savetchuk's avatar"
               width={120}
@@ -53,10 +59,10 @@ function Home (props) {
               <br /> Open-Source contributor
             </p>
             <a
-              href="mailto:andrew.savetchuk@gmail.com"
+              href='mailto:andrew.savetchuk@gmail.com'
               className={styles.introButton}
-              target="_blank"
-              rel="noreferrer"
+              target='_blank'
+              rel='noreferrer'
             >
               <span>&#x1F4E8;</span>Get In Touch
             </a>
@@ -76,8 +82,8 @@ function Home (props) {
                           <span>{ReactHtmlParser(link.icon)}</span>
                           <a
                             href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
+                            target='_blank'
+                            rel='noreferrer'
                             className={styles.linksItemTitle}
                           >
                             {link.title}
@@ -88,7 +94,7 @@ function Home (props) {
                         </div>
                       </li>
                     ))
-                    : ""}
+                    : ''}
                 </ul>
               </div>
             ))}
@@ -100,16 +106,22 @@ function Home (props) {
 }
 
 export async function getStaticProps () {
-  const [
-    githubLastCommitDate
+  let [
+    githubLastCommitDate,
+    twitterLastTweetDate
   ] = await Promise.all([
-    getGithubLastCommitDate("AndrewSavetchuk")
+    getGithubLastCommitDate('AndrewSavetchuk'),
+    getTwitterLastTweetDate('AndrewSavetchuk')
   ]);
+
+  githubLastCommitDate = `${githubLastCommitDate}T23:59:59`;
+  twitterLastTweetDate = twitterLastTweetDate.replace('.000Z', '');
 
   return {
     props: {
       stats: {
-        github: `Last commit: ${diffForHumans(githubLastCommitDate)}`
+        github: `Last commit: ${diffForHumans(githubLastCommitDate)}`,
+        twitter: `Last tweet: ${diffForHumans(twitterLastTweetDate)}`
       }
     }
   };
