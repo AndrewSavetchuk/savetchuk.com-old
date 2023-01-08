@@ -18,7 +18,14 @@ export async function getLastTweetDate (username) {
 
   try {
     jsonResponse = await response.json();
-    jsonResponse = jsonResponse?.data[0]?.created_at ?? undefined;
+
+    const lastTweetDate = jsonResponse?.data?.[0]?.created_at;
+    const date = new Date(lastTweetDate);
+    const offsetInMinutes = date.getTimezoneOffset();
+    const offsetInMilliseconds = offsetInMinutes * 60 * 1000;
+    const localDateTime = new Date(date.getTime() - offsetInMilliseconds);
+
+    jsonResponse = localDateTime.toISOString();
   } catch (e) {
     jsonResponse = undefined;
   }
