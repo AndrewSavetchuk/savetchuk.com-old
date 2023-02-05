@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Social Links",
+    "links": [
+      {
+        "icon": "&#x1F5A5;",
+        "title": "GitHub",
+        "subtitle": "No subtitle",
+        "href": "https://github.com/AndrewSavetchuk"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "StackOverflow",
+        "subtitle": "Reputation: top 24% overall",
+        "href": "https://stackoverflow.com/users/6423807/andrew-savetchuk"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "Twitter",
+        "subtitle": "Code, tech, video games",
+        "href": "https://twitter.com/AndrewSavetchuk"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "Linked In",
+        "subtitle": "Let's connect!",
+        "href": "https://www.linkedin.com/in/andrewsavetchuk/?locale=en_US"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "Instagram",
+        "subtitle": "Non-tech stuff, food stories",
+        "href": "https://instagram.com/andrew.savetchuk"
+      }
+    ]
+  },
+  {
+    "title": "Other Links",
+    "links": [
+      {
+        "icon": "&#x1F5A5;",
+        "title": "Personal Blog",
+        "subtitle": "Personal and technical writing",
+        "href": "https://hashnode.com/@AndrewSavetchuk"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "DEV Community",
+        "subtitle": "Technical writing only",
+        "href": "https://dev.to/andrewsavetchuk"
+      },
+      {
+        "icon": "&#x1F5A5;",
+        "title": "Buy Me a Coffee",
+        "subtitle": "This will help me write more code",
+        "href": "https://www.buymeacoffee.com/AndrewSavetchuk"
+      }
+    ]
+  }
+]
