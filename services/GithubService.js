@@ -1,26 +1,23 @@
 export async function getLastCommitDate (username) {
   let jsonResponse;
 
+  const url = 'https://api.github.com/graphql';
   const token = process.env.GITHUB_ACCESS_TOKEN;
 
-  const headers = {
-    'Authorization': `bearer ${token}`
-  };
-
-  const body = {
-    'query': `query {
-      user(login: "${username}") {
-        contributionsCollection {
-          latestRestrictedContributionDate
-        }
-      }
-    }`
-  };
-
-  const response = await fetch('https://api.github.com/graphql', {
+  const response = await fetch(url, {
     method: 'POST',
-    body: JSON.stringify(body),
-    headers
+    body: JSON.stringify({
+      query: `query {
+        user(login: "${username}") {
+          contributionsCollection {
+            latestRestrictedContributionDate
+          }
+        }
+      }`
+    }),
+    headers: {
+      'Authorization': `bearer ${token}`
+    },
   });
 
   try {
