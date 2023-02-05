@@ -1,6 +1,6 @@
 {
   "name": "savetchuk.com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev\" \"next lint\"",
@@ -13,7 +13,7 @@
   "dependencies": {
     "concurrently": "^6.4.0",
     "javascript-time-ago": "^2.5.4",
-    "next": "^13.0.7",
+    "next": "^13.1.6",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
