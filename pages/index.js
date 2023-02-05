@@ -2,30 +2,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import ReactHtmlParser from 'react-html-parser';
 
-import linkBlocks from '@/config/linkBlocks.json';
+import sidebarLinks from '@/config/sidebarLinks.json';
 
 import { diffForHumans } from '@/helpers/DateHelper';
 
 import { getLastCommitDate as getGithubLastCommitDate } from '@/services/GithubService';
-import { getLastTweetDate as getTwitterLastTweetDate } from '@/services/TwitterService';
 
 import styles from '@/styles/Home.module.scss';
-
-function getSubtitle (key, props) {
-  key = key.toLowerCase();
-
-  switch (key) {
-    case 'github':
-    case 'twitter':
-      return props.stats[key];
-    case 'linked in':
-      return 'You can find my CV here'
-    case 'instagram':
-      return 'Non-technical stuff';
-    default:
-      return '';
-  }
-}
 
 function Home (props) {
   return (
@@ -55,8 +38,8 @@ function Home (props) {
             />
             <h1 className={styles.introTitle}>Andrew Savetchuk</h1>
             <p className={styles.introDescription}>
-              Software Engineer, Content Creator,
-              <br /> Open-Source contributor
+              Software Engineer with over 7 years of experience,
+              <br /> Content Creator and Open-Source Contributor
             </p>
             <a
               href='mailto:andrew.savetchuk@gmail.com'
@@ -64,20 +47,28 @@ function Home (props) {
               target='_blank'
               rel='noreferrer'
             >
-              <span>&#x1F4E8;</span>Get In Touch
+              <span>&#x1f468;&#x1f3fb;&#x200d;&#x1f4bb;</span>Read More
+            </a>
+            <a
+              href='mailto:andrew.savetchuk@gmail.com'
+              className={styles.introButton}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <span>&#x1F44B;</span>Say Hello
             </a>
           </section>
           <section className={styles.links}>
-            {linkBlocks.map((linkBlock, linkBlockIndex) => (
+            {sidebarLinks.map((linkSection, linkSectionIndex) => (
               <div
-                key={`linkBlock-${linkBlockIndex}`}
+                key={`linkSection-${linkSectionIndex}`}
                 className={styles.linksBlock}
               >
-                <h2>{linkBlock.title}</h2>
+                <h2>{linkSection.title}</h2>
                 <ul>
-                  {linkBlock.links?.length
-                    ? linkBlock.links.map((link, linkIndex) => (
-                      <li key={`linkBlock-${linkBlockIndex}-${linkIndex}`}>
+                  {linkSection.links?.length
+                    ? linkSection.links.map((link, linkIndex) => (
+                      <li key={`linkSection-${linkSectionIndex}-${linkIndex}`}>
                         <div>
                           <span>{ReactHtmlParser(link.icon)}</span>
                           <a
@@ -89,7 +80,7 @@ function Home (props) {
                             {link.title}
                           </a>
                           <div className={styles.linksItemSubtitle}>
-                            {getSubtitle(link.title, props)}
+                            {props.stats[link.title.toLowerCase()] ?? link.subtitle}
                           </div>
                         </div>
                       </li>
@@ -108,20 +99,14 @@ function Home (props) {
 export async function getStaticProps () {
   let [
     githubLastCommitDate,
-    twitterLastTweetDate
   ] = await Promise.all([
     getGithubLastCommitDate('AndrewSavetchuk'),
-    getTwitterLastTweetDate('AndrewSavetchuk')
   ]);
-
-  githubLastCommitDate = `${githubLastCommitDate}T23:59:59`;
-  twitterLastTweetDate = twitterLastTweetDate.replace('.000Z', '');
 
   return {
     props: {
       stats: {
-        github: `Last commit: ${diffForHumans(githubLastCommitDate)}`,
-        twitter: `Last tweet: ${diffForHumans(twitterLastTweetDate)}`
+        github: `Last commit: ${githubLastCommitDate ? diffForHumans(`${githubLastCommitDate}T23:59:59`) : 'Unknown'}`,
       }
     }
   };
