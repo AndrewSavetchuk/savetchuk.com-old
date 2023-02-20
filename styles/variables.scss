@@ -1,10 +1,13 @@
-// Colors without shades
+/* Variables: Media Queries */
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+/* Variables: Colors */
 $colorBlack: #121212;
 $colorWhite: #FFFFFF;
+$colorYellowGreen: #D3F000;
 
-// Colors with shades
+/* Variables: Colors with Shades */
 $colorGrayLight: #AAAAAA;
-
-// Component specific colors
-$colorBody: $colorWhite;
-$colorBodyBg: $colorBlack;
+$colorGrayDark: #272727;

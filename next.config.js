@@ -1,13 +1,10 @@
-const path = require('path');
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
   reactStrictMode: true,
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@import "./styles/variables.scss";`,
-  },
 };
+
+module.exports = nextConfig;

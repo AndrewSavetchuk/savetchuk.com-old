@@ -11,6 +11,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "@types/react-html-parser": "^2.0.2",
     "concurrently": "^6.4.0",
     "javascript-time-ago": "^2.5.4",
     "next": "^13.1.6",
@@ -23,13 +24,17 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "prettier": "2.5.0",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "typescript": "^4.9.5"
   },
   "config": {
     "commitizen": {
