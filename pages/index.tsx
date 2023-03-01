@@ -1,15 +1,10 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
 
+import Container from '@/components/Container';
 import Intro from '@/components/Intro';
 
-import layoutStyles from '@/styles/components/Layout.module.scss';
-
-interface HomeProps {
-  stats: object;
-}
-
-export const Home: NextPage<HomeProps> = (props) => {
+export const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -24,11 +19,9 @@ export const Home: NextPage<HomeProps> = (props) => {
         />
       </Head>
       <main>
-        <div className={layoutStyles.container}>
-
+        <Container>
           <Intro />
-
-        </div>
+        </Container>
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import introStyles from '@/styles/components/Intro.module.scss';
+import introStyles from '@/components/Intro/Intro.module.scss';
 
 const Intro: React.FC = () => {
   return (
