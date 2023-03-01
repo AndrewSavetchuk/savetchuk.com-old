@@ -1,5 +1,5 @@
-export async function getLastCommitDate (username) {
-  let jsonResponse;
+export async function getLastCommitDate (username: string): Promise<string> {
+  let lastCommitDate: string = '';
 
   const url = 'https://api.github.com/graphql';
   const token = process.env.GITHUB_ACCESS_TOKEN;
@@ -21,12 +21,9 @@ export async function getLastCommitDate (username) {
   });
 
   try {
-    jsonResponse = await response.json();
-    jsonResponse = jsonResponse?.data?.user?.contributionsCollection;
-    jsonResponse = jsonResponse?.latestRestrictedContributionDate;
-  } catch (e) {
-    jsonResponse = undefined;
-  }
+    const jsonResponse = await response.json();
+    lastCommitDate = jsonResponse?.data?.user?.contributionsCollection?.latestRestrictedContributionDate as string;
+  } catch (e) {}
 
-  return jsonResponse;
+  return lastCommitDate;
 }
