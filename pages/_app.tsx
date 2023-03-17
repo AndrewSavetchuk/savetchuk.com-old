@@ -1,5 +1,6 @@
 import 'normalize.css';
 import '@/styles/index.scss';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import type { AppProps } from 'next/app';
 
