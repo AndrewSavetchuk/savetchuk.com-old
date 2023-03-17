@@ -1,0 +1,122 @@
+@import "@/styles/variables.scss";
+
+$gradientColorPrimary: #FF6363;
+$gradientColorSecondary: #7100FF;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.heroBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  max-width: 670px;
+
+  @media (min-width: $lg) {
+    max-width: 920px;
+  }
+}
+
+.heroAvatar {
+  margin-bottom: 32px;
+}
+
+.heroTitle {
+  font-size: 64px;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 22px;
+
+  @media (min-width: $lg) {
+    font-size: 80px;
+    letter-spacing: 2.5px;
+  }
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  color: rgba($colorWhite, 0.6);
+  margin-bottom: 48px;
+  font-weight: 300;
+
+  br {
+    display: none;
+
+    @media (min-width: $lg) {
+      display: block;
+    }
+  }
+}
+
+.heroSubtitle a {
+  color: rgba($colorWhite, 0.7);
+  transition: color 200ms;
+
+  &:hover {
+    color: rgba($colorWhite, 1);
+  }
+}
+
+.heroButton {
+  position: relative;
+  padding: 12px 40px;
+  border: 3px solid rgba($colorWhite, 0.3);
+  border-radius: 10px;
+  background-color: rgba($colorWhite, 0.9);
+  background-clip: padding-box;
+  color: $colorBlack;
+  font-weight: 500;
+  line-height: 20px;
+  transition: background-color 200ms;
+  margin-bottom: 28px;
+
+  &:hover {
+    background-color: rgba($colorWhite, 1);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 0;
+    left: 5px;
+    z-index: -1;
+    border-radius: 6px;
+    background: conic-gradient(
+      from 147.14deg at 50% 50%,
+      $gradientColorSecondary -55.68deg,
+      $gradientColorPrimary 113.23deg,
+      $gradientColorSecondary 195deg,
+      $gradientColorSecondary 304.32deg,
+      $gradientColorPrimary 473.23deg,
+    );
+    filter: blur(20px);
+    opacity: .5;
+  }
+
+  @media (min-width: $md) {
+    min-width: 280px;
+  }
+}
+
+.heroResumeLink {
+  color: rgba($colorWhite, 0.4);
+}
+
+.heroResumeLink a {
+  color: rgba($colorWhite, 0.7);
+  transition: color 200ms;
+
+  &:hover {
+    color: rgba($colorWhite, 1);
+  }
+}

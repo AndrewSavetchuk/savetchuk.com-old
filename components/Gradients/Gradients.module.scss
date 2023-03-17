@@ -1,0 +1,35 @@
+@import "@/styles/variables.scss";
+
+$colorPrimary: #FF6363;
+$colorSecondary: #7100FF;
+$colorBackground: rgba(242, 27, 85, 0);
+
+.gradients {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.gradient {
+  width: 1700px;
+  height: 1700px;
+  opacity: .08;
+  position: absolute;
+}
+
+.gradientPrimary {
+  background: $colorPrimary;
+  background: radial-gradient(circle, $colorPrimary 0%, $colorPrimary 30%, $colorBackground 70%, $colorBackground 100%);
+  left: -200px;
+  top: 100px;
+}
+
+.gradientSecondary {
+  background: $colorSecondary;
+  background: radial-gradient(circle, $colorSecondary 0%, $colorSecondary 30%, $colorBackground 70%, $colorBackground 100%);
+  right: -200px;
+  top: -500px;
+}

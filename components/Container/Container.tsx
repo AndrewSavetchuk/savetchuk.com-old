@@ -1,6 +1,6 @@
 import React from 'react';
 
-import containerStyles from '@/components/Container/Container.module.scss';
+import styles from '@/components/Container/Container.module.scss';
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
-    <div className={containerStyles.container}>
+    <div className={styles.container}>
       {children}
     </div>
   )

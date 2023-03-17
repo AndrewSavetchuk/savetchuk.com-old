@@ -1,15 +1,16 @@
 @import "@/styles/variables.scss";
 
 .container {
-  padding: 0 1rem;
+  width: 100%;
+  padding: 0 16px;
 
   @media (min-width: $md) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   @media (min-width: $xl) {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 64px;
+    padding-right: 64px;
   }
 }

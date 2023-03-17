@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { NextPage } from 'next';
 
 import Container from '@/components/Container';
-import Intro from '@/components/Intro';
+import Gradients from '@/components/Gradients';
+import Hero from '@/components/Hero';
 
 export const Home: NextPage = () => {
   return (
@@ -20,8 +21,9 @@ export const Home: NextPage = () => {
       </Head>
       <main>
         <Container>
-          <Intro />
+          <Hero />
         </Container>
+        <Gradients />
       </main>
     </div>
   );
