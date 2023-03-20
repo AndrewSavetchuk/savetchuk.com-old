@@ -7,7 +7,11 @@ $gradientColorSecondary: #7100FF;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 60px 0;
+  padding: 42px 0 60px;
+
+  @media (min-width: $md) {
+    padding-top: 48px;
+  }
 }
 
 .heroBody {
@@ -17,7 +21,11 @@ $gradientColorSecondary: #7100FF;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  max-width: 670px;
+  max-width: 480px;
+
+  @media (min-width: $md) {
+    max-width: 670px;
+  }
 
   @media (min-width: $lg) {
     max-width: 920px;
@@ -25,14 +33,25 @@ $gradientColorSecondary: #7100FF;
 }
 
 .heroAvatar {
+  max-width: 120px;
+  height: auto;
   margin-bottom: 32px;
+
+  @media (min-width: $md) {
+    max-width: 150px;
+  }
 }
 
 .heroTitle {
-  font-size: 64px;
-  letter-spacing: 2px;
+  font-size: 36px;
+  letter-spacing: 1.5px;
   margin-top: 0;
   margin-bottom: 22px;
+
+  @media (min-width: $md) {
+    font-size: 64px;
+    letter-spacing: 2px;
+  }
 
   @media (min-width: $lg) {
     font-size: 80px;
@@ -41,18 +60,48 @@ $gradientColorSecondary: #7100FF;
 }
 
 .heroSubtitle {
-  font-size: 20px;
-  letter-spacing: 1.25px;
-  color: rgba($colorWhite, 0.6);
-  margin-bottom: 48px;
+  font-size: 16px;
+  letter-spacing: 1.15px;
   font-weight: 300;
+  color: rgba($colorWhite, 0.6);
+  margin-bottom: 36px;
 
-  br {
-    display: none;
+  @media (min-width: 360px) {
+    font-size: 17px;
+  }
 
-    @media (min-width: $lg) {
-      display: block;
+  @media (min-width: $md) {
+    font-size: 20px;
+    letter-spacing: 1.25px;
+    margin-bottom: 48px;
+  }
+}
+
+.heroSubtitle span {
+  display: block;
+
+  &:first-child {
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: $md) {
+    display: inline;
+
+    &:first-child {
+      margin-bottom: 0;
     }
+  }
+
+  @media (min-width: $lg) {
+    display: block;
+  }
+}
+
+.heroSubtitle br {
+  display: none;
+
+  @media (min-width: 360px) and (max-width: $sm - 1px) {
+    display: block;
   }
 }
 
@@ -118,5 +167,9 @@ $gradientColorSecondary: #7100FF;
 
   &:hover {
     color: rgba($colorWhite, 1);
+  }
+
+  @media (max-width: 360px - 1px) {
+    display: inline-block;
   }
 }

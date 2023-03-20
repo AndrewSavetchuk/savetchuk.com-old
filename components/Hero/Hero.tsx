@@ -16,10 +16,10 @@ const Hero: React.FC = () => {
           priority={true}
         />
         <h1 className={styles.heroTitle}>Hi, I&apos;m Andrew</h1>
-        <p className={styles.heroSubtitle}>
-          Software Engineer based in Canada who is passionate about everything related to technology. <br />
-          In my free time, I run <a href='https://blog.savetchuk.com' target="_blank" rel="noreferrer">a blog</a> where I write about interesting things that I learn along the way.
-        </p>
+        <div className={styles.heroSubtitle}>
+          <span>Software Engineer based in Canada <br />who is passionate about everything <br />related to technology.</span>
+          <span>In my free time, I run <a href='https://blog.savetchuk.com' target="_blank" rel="noreferrer">a blog</a> where <br />I write about interesting things that <br />I learn along the way.</span>
+        </div>
         <a
           href='mailto:andrew.savetchuk@gmail.com'
           className={styles.heroButton}
