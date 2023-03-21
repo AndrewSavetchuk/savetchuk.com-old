@@ -7,7 +7,7 @@ import Hero from '@/components/Hero';
 
 export const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Andrew Savetchuk</title>
         <meta
@@ -25,7 +25,7 @@ export const Home: NextPage = () => {
         </Container>
         <Gradients />
       </main>
-    </div>
+    </>
   );
 };
 

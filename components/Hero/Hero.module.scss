@@ -4,7 +4,7 @@ $gradientColorPrimary: #FF6363;
 $gradientColorSecondary: #7100FF;
 
 .hero {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   align-items: center;
   padding-bottom: 18px;
@@ -82,7 +82,7 @@ $gradientColorSecondary: #7100FF;
   display: block;
 
   &:first-child {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   @media (min-width: $md) {
