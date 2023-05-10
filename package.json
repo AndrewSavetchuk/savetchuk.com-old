@@ -14,6 +14,7 @@
     "@babel/helper-module-imports": "^7.18.6",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@vercel/analytics": "^1.0.1",
     "babel-plugin-macros": "^3.1.0",
     "concurrently": "^6.4.0",
     "next": "^13.1.6",
