@@ -31,7 +31,7 @@
     "@types/react-dom": "^18.0.11",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7",
-    "eslint-config-next": "12.0.4",
+    "eslint-config-next": "^13.5.7-canary.37",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "prettier": "2.5.0",
