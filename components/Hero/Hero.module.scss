@@ -3,109 +3,6 @@
 $gradientColorPrimary: #FF6363;
 $gradientColorSecondary: #7100FF;
 
-.hero {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  padding-bottom: 18px;
-
-  @media (min-width: $md) {
-    padding-top: 48px;
-    padding-bottom: 60px;
-  }
-}
-
-.heroBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  max-width: 480px;
-
-  @media (min-width: $md) {
-    max-width: 670px;
-  }
-
-  @media (min-width: $lg) {
-    max-width: 920px;
-  }
-}
-
-.heroAvatar {
-  max-width: 120px;
-  height: auto;
-  margin-bottom: 32px;
-
-  @media (min-width: $md) {
-    max-width: 150px;
-  }
-}
-
-.heroTitle {
-  font-size: 36px;
-  letter-spacing: 0.5px;
-  margin-top: 0;
-  margin-bottom: 22px;
-
-  @media (min-width: $md) {
-    font-size: 64px;
-    letter-spacing: 1px;
-  }
-
-  @media (min-width: $lg) {
-    font-size: 80px;
-    letter-spacing: 1.5px;
-  }
-}
-
-.heroSubtitle {
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  font-weight: 300;
-  color: rgba(white, 0.6);
-  margin-bottom: 42px;
-
-  @media (min-width: 360px) {
-    font-size: 17px;
-  }
-
-  @media (min-width: $md) {
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-bottom: 48px;
-  }
-}
-
-.heroSubtitle span {
-  display: block;
-
-  &:first-child {
-    margin-bottom: 18px;
-  }
-
-  @media (min-width: $md) {
-    display: inline;
-
-    &:first-child {
-      margin-bottom: 0;
-    }
-  }
-
-  @media (min-width: $lg) {
-    display: block;
-  }
-}
-
-.heroSubtitle br {
-  display: none;
-
-  @media (min-width: 360px) and (max-width: $sm - 1px) {
-    display: block;
-  }
-}
-
 .heroSubtitle a {
   color: rgba(white, 0.7);
   transition: color 200ms;
@@ -142,12 +39,12 @@ $gradientColorSecondary: #7100FF;
     z-index: -1;
     border-radius: 6px;
     background: conic-gradient(
-      from 147.14deg at 50% 50%,
-      $gradientColorSecondary -55.68deg,
-      $gradientColorPrimary 113.23deg,
-      $gradientColorSecondary 195deg,
-      $gradientColorSecondary 304.32deg,
-      $gradientColorPrimary 473.23deg,
+                    from 147.14deg at 50% 50%,
+                    $gradientColorSecondary -55.68deg,
+                    $gradientColorPrimary 113.23deg,
+                    $gradientColorSecondary 195deg,
+                    $gradientColorSecondary 304.32deg,
+                    $gradientColorPrimary 473.23deg,
     );
     filter: blur(20px);
     opacity: .5;
