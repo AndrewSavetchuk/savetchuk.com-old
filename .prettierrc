@@ -1,0 +1,22 @@
+{
+  "overrides": [
+    {
+      "files": ["*.ts", "*.js"],
+      "options": {
+        "trailingComma": "all"
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "singleAttributePerLine": true
+      }
+    }
+  ],
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
+}

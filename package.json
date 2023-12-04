@@ -14,14 +14,18 @@
     "@babel/helper-module-imports": "^7.18.6",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tailwindcss/forms": "^0.5.7",
     "@vercel/analytics": "^1.0.1",
+    "autoprefixer": "^10.4.16",
     "babel-plugin-macros": "^3.1.0",
     "concurrently": "^6.4.0",
     "next": "^13.5.7-canary.37",
     "normalize.css": "^8.0.1",
+    "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.43.5"
+    "sass": "^1.43.5",
+    "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
@@ -34,7 +38,8 @@
     "eslint-config-next": "^13.5.7-canary.37",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
-    "prettier": "2.5.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
     "standard-version": "^9.3.2",
     "typescript": "^4.9.5"
   },
