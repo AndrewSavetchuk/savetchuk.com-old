@@ -2,5 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "variables";
-@import "reset";
+/*
+ * Set the min-width for body.
+ */
+body {
+  min-width: 320px;
+}
+
+/*
+ * Set text and background colors globally.
+ */
+body {
+  background-color: theme('colors.neutral.600');
+  color: theme('colors.white');
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: theme('lineHeight.normal');
+}
+
+/*
+ * Set the height of the elements to 100%,
+ * and disable overscroll behavior.
+ */
+html,
+body,
+#__next,
+#__next > main > div {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+/*
+ * Make sure the main content
+ * is always on top of the gradient.
+ */
+main > div:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+/**
+ * Set link styles globally.
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+}

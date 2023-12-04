@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
           Send Me a Message
         </a>
         <div className={styles.heroResumeLink}>
-          Looking for my resume? <a href='/Resume_Andrew_Savetchuk_2023.pdf' target="_blank">Download it here</a>.
+          Or download my resume <a href='/Resume_Andrew_Savetchuk_2023.pdf' target="_blank">here</a>.
         </div>
       </div>
     </section>

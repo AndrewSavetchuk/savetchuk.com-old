@@ -45,26 +45,26 @@ $gradientColorSecondary: #7100FF;
 
 .heroTitle {
   font-size: 36px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   margin-top: 0;
   margin-bottom: 22px;
 
   @media (min-width: $md) {
     font-size: 64px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   @media (min-width: $lg) {
     font-size: 80px;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.5px;
   }
 }
 
 .heroSubtitle {
   font-size: 16px;
-  letter-spacing: 1.15px;
+  letter-spacing: 0.5px;
   font-weight: 300;
-  color: rgba($colorWhite, 0.6);
+  color: rgba(white, 0.6);
   margin-bottom: 42px;
 
   @media (min-width: 360px) {
@@ -73,7 +73,7 @@ $gradientColorSecondary: #7100FF;
 
   @media (min-width: $md) {
     font-size: 20px;
-    letter-spacing: 1.25px;
+    letter-spacing: 1px;
     margin-bottom: 48px;
   }
 }
@@ -107,29 +107,29 @@ $gradientColorSecondary: #7100FF;
 }
 
 .heroSubtitle a {
-  color: rgba($colorWhite, 0.7);
+  color: rgba(white, 0.7);
   transition: color 200ms;
 
   &:hover {
-    color: rgba($colorWhite, 1);
+    color: rgba(white, 1);
   }
 }
 
 .heroButton {
   position: relative;
   padding: 12px 40px;
-  border: 3px solid rgba($colorWhite, 0.3);
+  border: 3px solid rgba(white, 0.3);
   border-radius: 10px;
-  background-color: rgba($colorWhite, 0.9);
+  background-color: rgba(white, 0.9);
   background-clip: padding-box;
-  color: $colorBlack;
+  color: black;
   font-weight: 500;
   line-height: 20px;
   transition: background-color 200ms;
   margin-bottom: 28px;
 
   &:hover {
-    background-color: rgba($colorWhite, 1);
+    background-color: rgba(white, 1);
   }
 
   &:before {
@@ -159,15 +159,15 @@ $gradientColorSecondary: #7100FF;
 }
 
 .heroResumeLink {
-  color: rgba($colorWhite, 0.4);
+  color: rgba(white, 0.4);
 }
 
 .heroResumeLink a {
-  color: rgba($colorWhite, 0.7);
+  color: rgba(white, 0.7);
   transition: color 200ms;
 
   &:hover {
-    color: rgba($colorWhite, 1);
+    color: rgba(white, 1);
   }
 
   @media (max-width: 360px - 1px) {

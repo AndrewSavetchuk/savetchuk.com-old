@@ -9,7 +9,18 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    colors: {
+      white: '#FFFFFF',
+      transparent: 'transparent',
+      neutral: {
+        100: '#F5F5F5',
+        200: '#D9D9D9',
+        300: '#808080',
+        400: '#424242',
+        500: '#272727',
+        600: '#121212',
+      },
+    },
     lineHeight: {
       tight: '1.2',
       normal: '1.5',
