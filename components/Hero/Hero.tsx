@@ -16,8 +16,9 @@ const Hero: React.FC = () => {
           priority={true}
         />
         <h1 className="mb-6 text-4xl font-bold md:text-6xl">Hi, I&apos;m Andrew</h1>
-        <div className="text-neutral-250 mb-10 space-y-4 text-base md:mb-12 md:text-xl">
-          Software Engineer based in Canada who is passionate <br /> about everything related to technology.
+        <div className="mb-10 space-y-4 text-base text-neutral-250 md:mb-12 md:text-xl">
+          Software Engineer based in Canada who is passionate <br className="hidden xs:block" /> about everything
+          related to technology.
         </div>
         <a
           href="mailto:andrew.savetchuk@gmail.com"
